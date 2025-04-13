@@ -122,7 +122,7 @@ const Index = () => {
     //   // link will be there.
     // });
     handleRemoteFile(
-      "https://firebasestorage.googleapis.com/v0/b/instant-mockup-9ab28.appspot.com/o/temp%2Flayout-export1.zip?alt=media&token=87f9ccbe-21cb-4acf-ae01-4cd195dbf5c3"
+      "https://firebasestorage.googleapis.com/v0/b/instant-mockup-9ab28.appspot.com/o/temp%2Flayout-export%20(18).zip?alt=media&token=665a8327-f3e3-4755-bc1d-1efb94b17895"
     );
   }, []);
 
