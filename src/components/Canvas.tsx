@@ -89,8 +89,8 @@ export const Canvas = ({ orientation, isInfinite, transform }: CanvasProps) => {
   const [isActive, setIsActive] = useState(activeOrientation === orientation);
 
   const device = devices[selectedDevice];
-  const width = orientation === 'portrait' ? device.width : device.height;
-  const height = orientation === 'portrait' ? device.height : device.width;
+  const width = orientation === "portrait" ? device.width : device.height;
+  const height = orientation === "portrait" ? device.height : device.width;
 
   // Track container dimensions with ResizeObserver
   useEffect(() => {
@@ -443,6 +443,7 @@ export const Canvas = ({ orientation, isInfinite, transform }: CanvasProps) => {
     const centerX = node.x() + newWidth / 2;
     const centerY = node.y() + newHeight / 2;
 
+
     const deltaX = centerX - oldPos.x;
     const deltaY = centerY - oldPos.y;
 
@@ -561,9 +562,9 @@ export const Canvas = ({ orientation, isInfinite, transform }: CanvasProps) => {
           y={y}
           width={position.width}
           height={position.height}
-          fill={hasParent ? '#bb9af7' : '#7aa2f7'}
+          fill={hasParent ? "#bb9af7" : "#7aa2f7"}
           opacity={0.3}
-          stroke={isSelected ? '#bb9af7' : (hasParent ? '#bb9af7' : '#7aa2f7')}
+          stroke={isSelected ? "#bb9af7" : hasParent ? "#bb9af7" : "#7aa2f7"}
           strokeWidth={hasParent ? 2 : 1}
           dash={hasParent ? [5, 5] : undefined}
           draggable={!isLocked}
@@ -640,7 +641,8 @@ export const Canvas = ({ orientation, isInfinite, transform }: CanvasProps) => {
       let width = assetTransform.size.width * baseWidth;
       let height = assetTransform.size.height * baseHeight;
 
-      if (assetTransform.maintainAspectRatio) {
+      if (assetTransform.
+          tainAspectRatio) {
         const imageAspectRatio = image.width / image.height;
         const containerAspectRatio = width / height;
 
@@ -1291,7 +1293,6 @@ export const Canvas = ({ orientation, isInfinite, transform }: CanvasProps) => {
             onAlign={handleAlign}
           />
         </div>
-
         <Stage
           ref={stageRef}
           width={stageWidth}

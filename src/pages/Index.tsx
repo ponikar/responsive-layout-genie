@@ -79,6 +79,7 @@ const Index = () => {
     }
   };
 
+
   const handleAddAsset = () => {
     if (selectedId) {
       addAsset(selectedId);
@@ -198,7 +199,7 @@ const Index = () => {
     const layout = getExportData();
     await navigator.clipboard.writeText(JSON.stringify(layout, null, 2));
     setIsCopied(true);
-    
+
     toast({
       title: "Layout copied to clipboard",
       description: "The layout JSON has been copied to your clipboard",
