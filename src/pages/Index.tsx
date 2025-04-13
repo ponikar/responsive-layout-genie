@@ -500,21 +500,6 @@ const Index = () => {
           <Canvas orientation="portrait" />
         </div>
 
-        <div className="flex-1 p-4 space-y-4">
-          <div className="flex justify-between items-center">
-            <h2 className="text-lg font-medium">Landscape Mode</h2>
-            <Button
-              variant="outline"
-              size="sm"
-              className="bg-editor-grid border-editor-grid hover:bg-editor-accent/20"
-              onClick={() => setExpandedView("landscape")}
-            >
-              <Maximize2 className="h-4 w-4" />
-            </Button>
-          </div>
-          <Canvas orientation="landscape" />
-        </div>
-
         <PropertiesPanel />
         <AssetLibrary />
       </div>
