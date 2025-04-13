@@ -1,10 +1,10 @@
-import { Button } from '@/components/ui/button';
-import { Canvas } from '@/components/Canvas';
-import { PropertiesPanel } from '@/components/PropertiesPanel';
-import { useLayoutStore } from '../store/layoutStore';
-import { Download, Plus, Clipboard, Check } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Canvas } from "@/components/Canvas";
+import { PropertiesPanel } from "@/components/PropertiesPanel";
+import { useLayoutStore } from "../store/layoutStore";
+import { Download, Plus, Clipboard, Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Index = () => {
   const { addContainer, getExportData } = useLayoutStore();
@@ -17,11 +17,13 @@ const Index = () => {
 
   const handleExport = () => {
     const layout = getExportData();
-    const blob = new Blob([JSON.stringify(layout, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(layout, null, 2)], {
+      type: "application/json",
+    });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'layout.json';
+    a.download = "layout.json";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -37,7 +39,7 @@ const Index = () => {
     const layout = getExportData();
     await navigator.clipboard.writeText(JSON.stringify(layout, null, 2));
     setIsCopied(true);
-    
+
     toast({
       title: "Layout copied to clipboard",
       description: "The layout JSON has been copied to your clipboard",
@@ -70,7 +72,7 @@ const Index = () => {
               ) : (
                 <Clipboard className="h-4 w-4 mr-2" />
               )}
-              {isCopied ? 'Copied!' : 'Copy to Clipboard'}
+              {isCopied ? "Copied!" : "Copy to Clipboard"}
             </Button>
             <Button
               variant="outline"
@@ -89,10 +91,6 @@ const Index = () => {
           <div className="flex-1">
             <h2 className="text-lg font-semibold mb-2">Portrait Mode</h2>
             <Canvas orientation="portrait" />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-lg font-semibold mb-2">Landscape Mode</h2>
-            <Canvas orientation="landscape" />
           </div>
         </div>
         <PropertiesPanel />
